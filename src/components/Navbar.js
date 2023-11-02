@@ -14,19 +14,19 @@ function Navbar({ setIsLoggedIn }) {
   const history = useHistory();
 
   function handleLogout() {
-    setIsLoggedIn(false);
-    history.push("/login");
+    const confirmLogout = window.confirm("Are you sure you want to log out?");
+    if (confirmLogout) {
+      setIsLoggedIn(false);
+      history.push("/login");
+    }
   }
 
   return (
     <div>
       <NavLink
         to="/"
-        /* set exact so it knows to only set activeStyle when route is deeply equal to link */
         exact
-        /* add styling to Navlink */
         style={linkStyles}
-        /* add prop for activeStyle */
         activeStyle={{
           background: "darkblue",
         }}

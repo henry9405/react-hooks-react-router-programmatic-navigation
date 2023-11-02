@@ -5,7 +5,7 @@ function Home({ isLoggedIn }) {
   if (!isLoggedIn) return <Redirect to="/login" />;
 
   return (
-    <div>
+    <div background-color = "red">
       <h1>Home!</h1>
     </div>
   );
